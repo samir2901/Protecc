@@ -287,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthBar: {fileID: 1288719468}
 --- !u!50 &68662052
 Rigidbody2D:
   serializedVersion: 4
@@ -1169,6 +1170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthBar: {fileID: 1288719468}
 --- !u!50 &693626991
 Rigidbody2D:
   serializedVersion: 4
@@ -2713,6 +2715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthBar: {fileID: 1288719468}
 --- !u!50 &1570877670
 Rigidbody2D:
   serializedVersion: 4
@@ -2982,6 +2985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthBar: {fileID: 1288719468}
 --- !u!50 &1720786353
 Rigidbody2D:
   serializedVersion: 4
@@ -3253,6 +3257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthBar: {fileID: 1288719468}
 --- !u!50 &1936655086
 Rigidbody2D:
   serializedVersion: 4

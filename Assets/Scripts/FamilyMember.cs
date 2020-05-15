@@ -1,23 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FamilyMember : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
-    public Slider healthBar;
+    public HealthBar healthBar;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.value = maxHealth;
+        healthBar.setMaxHealth(maxHealth);
     }
 
     private void Update()
     {
         //Debug.Log(currentHealth);
-        healthBar.value = currentHealth;
+        if(currentHealth <= 0)
+        {
+            gameManager.ShowGameOverScreen();
+        }
+        healthBar.setHealth(currentHealth);
     }
 }

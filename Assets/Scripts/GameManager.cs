@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
 
     public GameObject HUD;
-    public GameObject spawnManger;   
+    public GameObject spawnManger;
+
 
     public void ShowGameOverScreen()
     {

@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyEnemy : MonoBehaviour
 {
     public GameObject explosionFX;
     public int score = 0;
+    public Text scoreTxt;
+
+    private void Start()
+    {
+        scoreTxt.text = "SCORE: 0";
+    }
+
     void Update()
     {
         if(Input.touchCount > 0)
@@ -19,8 +27,9 @@ public class DestroyEnemy : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                         score += 10;
+                        scoreTxt.text = "SCORE: " + score.ToString();
                         Instantiate(explosionFX, (Vector2)Camera.main.ScreenToWorldPoint(touch.position),Quaternion.Euler(new Vector3(-90,0,0)));
-                        Debug.Log(score);
+                        //Debug.Log(score);
                     }
                 }
             }

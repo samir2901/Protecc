@@ -179,7 +179,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f677ef65acab1d4d8556de8c6f91a92, type: 3}
-    m_FontSize: 125
+    m_FontSize: 120
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -714,8 +714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 219.9, y: -81.4}
-  m_SizeDelta: {x: 439.7624, y: 162.81573}
+  m_AnchoredPosition: {x: 241.9, y: -81.4}
+  m_SizeDelta: {x: 483.78918, y: 162.81573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394982184
 MonoBehaviour:
@@ -738,12 +738,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f677ef65acab1d4d8556de8c6f91a92, type: 3}
-    m_FontSize: 125
+    m_FontSize: 120
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 150
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -1095,6 +1095,7 @@ MonoBehaviour:
   explosionFX: {fileID: 5200672695259215244, guid: 2ae2d2e10f24f1540a2dd2182dc84085,
     type: 3}
   score: 0
+  scoreTxt: {fileID: 394982184}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

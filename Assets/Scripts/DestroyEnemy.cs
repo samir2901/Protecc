@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyEnemy : MonoBehaviour
 {
     public GameObject explosionFX;
+    public int score = 0;
     void Update()
     {
         if(Input.touchCount > 0)
@@ -17,7 +18,9 @@ public class DestroyEnemy : MonoBehaviour
                     if (hit.collider.CompareTag("Enemy"))
                     {
                         Destroy(hit.collider.gameObject);
-                        Instantiate(explosionFX, (Vector2)Camera.main.ScreenToWorldPoint(touch.position),Quaternion.Euler(new Vector3(-90,0,0)));                        
+                        score += 10;
+                        Instantiate(explosionFX, (Vector2)Camera.main.ScreenToWorldPoint(touch.position),Quaternion.Euler(new Vector3(-90,0,0)));
+                        Debug.Log(score);
                     }
                 }
             }

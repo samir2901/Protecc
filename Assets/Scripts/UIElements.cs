@@ -6,21 +6,38 @@ using UnityEngine.SceneManagement;
 public class UIElements : MonoBehaviour
 {
     public GameObject pauseMenu;
-   public void reloadGame()
+    bool isPaused = false;
+    public void reloadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-   public void PauseGame()
+    public void PauseGame()
     {
-        Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
+        if (!isPaused)
+        {
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+            isPaused = true;
+        }
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
+        if (isPaused)
+        {
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+            isPaused = false;
+        }
     }
 
+    public void LoadMainMenu()
+    {
+        if (isPaused)
+        {
+            ResumeGame();
+        }
+        SceneManager.LoadScene("MainMenu");
+    }
 }

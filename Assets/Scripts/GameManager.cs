@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,13 +11,18 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     public GameObject spawnManger;
 
+    private void Update()
+    {
+        
+    }
+
 
     public void ShowGameOverScreen()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
-            Destroy(enemy);
+            Destroy(enemy.gameObject);
         }
         HUD.SetActive(false);
         spawnManger.SetActive(false);
@@ -29,7 +35,7 @@ public class GameManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
-            Destroy(enemy);
+            Destroy(enemy.gameObject);
         }
         HUD.SetActive(false);
         spawnManger.SetActive(false);

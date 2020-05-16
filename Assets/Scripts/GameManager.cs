@@ -7,19 +7,29 @@ public class GameManager : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject gameOverPanel;
-
+    public GameObject mainCamera;
     public GameObject HUD;
     public GameObject spawnManger;
+    public int currScore;
+    GameObject[] enemies;
+    private void Start()
+    {        
+        currScore = mainCamera.GetComponent<DestroyEnemy>().score;
+    }
 
     private void Update()
     {
-        
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        currScore = mainCamera.GetComponent<DestroyEnemy>().score;
+        if (currScore > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", currScore);
+        }
     }
 
 
     public void ShowGameOverScreen()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    {        
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy.gameObject);
@@ -31,8 +41,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShowWinScreen()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    {        
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy.gameObject);

@@ -7,7 +7,7 @@ public class EnemyMove : MonoBehaviour
     Vector2 memberPos;
     public float speed = 0.5f;
     public int damage = 1;
-    public GameObject hurtFX;
+    public GameObject hurtFX;    
     // Start is called before the first frame update
     void Start()
     {        
@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
     {
         if(collision.CompareTag("FamilyMember"))
         {
-            collision.GetComponent<FamilyMember>().currentHealth -= damage;
+            collision.GetComponent<FamilyMember>().currentHealth -= damage;            
             Instantiate(hurtFX, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
             Destroy(gameObject);
         }
